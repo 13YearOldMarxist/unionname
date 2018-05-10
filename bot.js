@@ -28,7 +28,7 @@ var Bot = new Twit(
 
 console.log('The bot is running...');
 
-setInterval(BotInit, 60*1000);
+setInterval(BotInit, 2*60*60*1000);
 
 
 function BotInit() 
