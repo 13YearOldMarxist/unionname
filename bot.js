@@ -34,19 +34,19 @@ setInterval(BotInit, 2*60*60*1000);
 function BotInit() 
 {
 	
-    var GeoDenonym = ['American', 'International', 'North American', 'British', 'Chinese', 'National', 'Alaskan', 'Mexican', 'Canadian', 'Californian', 'New York', 'Pennsylvanian', 'Pan-Asian', 'European'];
-    var UnitySyn = ['Brotherhood', 'Guild', 'Alliance', 'Union', 'Federation', 'Association', 'Sisterhood'];
+    var GeoDenonym = ['American', 'International', 'North American', 'British', 'Chinese', 'National', 'Alaskan', 'Mexican', 'Canadian', 'Californian', 'New York', 'Pennsylvanian', 'Pan-Asian', 'European', 'West Virginian', 'Kentucky', 'New Mexico', 'Colorado', 'Washington', 'Baltimore', 'Washington-Baltimore'];
+    var UnitySyn = ['Brotherhood', 'Guild', 'Alliance', 'Union', 'Federation', 'Association', 'Sisterhood', 'Organization'];
     var UnityEd = ['Federated', 'Amalgamated', 'Allied', 'United', 'Wingnut'];
-    var GeoPlace = ['America', 'the World', 'North America', 'Britain', 'China', 'America', 'Alaska', 'Mexico', 'Canada', 'California', 'New York', 'Pennsylvania', 'Asia', 'Europe'];
+    var GeoPlace = ['America', 'the World', 'North America', 'Britain', 'China', 'America', 'Alaska', 'Mexico', 'Canada', 'California', 'New York', 'Pennsylvania', 'Asia', 'Europe', 'West Virginia', 'Kentucky', 'New Mexico', 'Colorado', 'Washington', 'Baltimore'];
     var ProfAdj = ['Electrical', 'Office', 'Financial', 'Educational', 'Education',
             'Professional', 'Automobile', 'Industrial', 'State', 'County', 'Municipal', 'Communications', 'Food', 'Commercial', 'Transit',
             'Technical', 'School', 'Restaurant', 'Postal', 'Aerospace', 'Sheet Metal', 'Theatrical', 'Stage', 'Longshore', 'Warehouse', 'Textile', 'Airline', 'Musical',
              'Freelance', 'Taxi', 'Marine', 'Mine', 'Utility', 'Nonprofit', 'Agricultral', 'Medical', 'Research', 'Computer', 'Software', 'Hotel', 'Building Service',
-             'Distribution', 'Lumber', 'Forestry', 'Fishery', 'Aquatic', 'Horticulture', 'Oil', 'Clothing', 'Furniture', 'Wood', 'Chemical', 'Machine', 'Printing', 'Publishing', 'Legal', 'Public Interest', 'Distribution', 'Sex Trade', 'Graphic Design', 'Graduate', 'Rideshare', 'Tech', 'Home Care', 'Campaign', 'Needletrade'];
-    var Prof = ['Teachers', 'Electricians', 'Steelworkers', 'Teamsters', 'Actors', 'Dishwashers', 'Boilermakers', 'Carpenters', 'Plumbers', 'Roofers', 'Mail Handlers', 'Joiners', 'Painters', 'Letter Carriers', 'Ironworkers', 'Nurses', 'Interns', 'Residents', 'Musicians', 'Train Dispatchers', 'Writers', 'Waterproofers', 'Flight Attendants', 'Researchers', 'Air Traffic Controllers', 'Ship Builders', 'Graduate Students', 'Sex Workers', 'Union Staffers'];
+             'Distribution', 'Lumber', 'Forestry', 'Fishery', 'Aquatic', 'Horticulture', 'Oil', 'Clothing', 'Furniture', 'Wood', 'Chemical', 'Machine', 'Printing', 'Publishing', 'Legal', 'Public Interest', 'Distribution', 'Sex Trade', 'Graphic Design', 'Graduate', 'Rideshare', 'Tech', 'Home Care', 'Campaign', 'Needletrade', 'Food Delivery', 'Airline', 'Logistics', 'Game', 'Harm Reduction', 'Fast Food', 'News', 'New Media', 'Government', 'Public'];
+    var Prof = ['Teachers', 'Electricians', 'Steelworkers', 'Teamsters', 'Actors', 'Dishwashers', 'Boilermakers', 'Carpenters', 'Plumbers', 'Roofers', 'Mail Handlers', 'Joiners', 'Painters', 'Letter Carriers', 'Ironworkers', 'Nurses', 'Interns', 'Residents', 'Musicians', 'Train Dispatchers', 'Writers', 'Waterproofers', 'Flight Attendants', 'Researchers', 'Air Traffic Controllers', 'Ship Builders', 'Graduate Students', 'Sex Workers', 'Union Staffers', 'Statisticians', 'Podcasters', 'Panhandlers', 'Fundraisers', 'Baristas', 'EMTs', 'Bike Messengers', 'Canvassers', 'Survey Researchers', 'Animators', 'Airline Pilots', 'Tutors'];
     var WorkerSyn = ['Workers', 'Employees', 'Laborers', 'Engineers'];
     var Continents = ['North America', 'South America', 'Europe', 'Africa', 'Asia', 'Oceania'];
-    var format = ['IBEW', 'SEIU', 'IWW', 'OPEIU', 'WDU', 'UAW', 'NEA', 'AFT', 'USWC', 'UNITE', 'LIUNA', 'USW'];
+    var format = ['IBEW', 'SEIU', 'IWW', 'OPEIU', 'WDU', 'UAW', 'NEA', 'AFT', 'USWC', 'UNITE', 'LIUNA', 'USW', 'PATCO', 'GWU', 'WBNG'];
 
     var randformat = format[Math.floor(Math.random() * format.length)];
 
@@ -161,6 +161,32 @@ function BotInit()
     Prof1 = Prof[Math.floor(Math.random() * Prof.length)];
 
     currentName = UnityEd1 + " " + Prof1;
+    }
+	
+	   if (randformat == "PATCO") {
+
+        Prof1 = Prof[Math.floor(Math.random() * Prof.length)];
+        UnitySyn1 = UnitySyn[Math.floor(Math.random() * UnitySyn.length)];
+
+        currentName = "Professional " + Prof1 + " " + UnitySyn1;
+    }
+
+   if (randformat == "GWU") {
+
+        ProfAdj1 = ProfAdj[Math.floor(Math.random() * ProfAdj.length)];
+        WorkerSyn1 = WorkerSyn[Math.floor(Math.random() * WorkerSyn.length)];
+        UnitySyn1 = UnitySyn[Math.floor(Math.random() * 4)];
+
+        currentName = ProfAdj1 + " " + WorkerSyn1 + " " + UnitySyn1;
+    }
+
+   if (randformat == "WBNG") {
+
+	GeoDenonym1 = GeoDenonym[Math.floor(Math.random() * GeoDenonym.length)];
+	ProfAdj1 = ProfAdj[Math.floor(Math.random() * ProfAdj.length)];
+	UnitySyn1 = UnitySyn[Math.floor(Math.random() * UnitySyn.length)];
+
+        currentName = GeoDenonym1 + " " + ProfAdj1 + " " + UnitySyn1;
     }
 
 	Bot.post('statuses/update', { status: currentName + " #1u" }, function(err, data, response) {
